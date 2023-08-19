@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Visualizer- Insertion Sort</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+    <noscript>JavaScript is required for this website. Please allow JavaScript and refresh the page.</noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.12.0/devicon.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/base_sort.css">
+    <!-- https://github.com/highlightjs/highlight.js/tree/main/src/styles for changing code highlighting just paste the name before .min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+    <div class="logo">SORT VISUALIZER</div>
+
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+
+      <!-- USING CHECKBOX HACK -->
+      <input type="checkbox" id="checkbox_toggle" />
+      <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+      <!-- NAVIGATION MENUS -->
+      <div class="menu">
+	<li class="short-text"><a href="../sorts/bubblesort.html">BUB</a></li>
+	<li class="full-text"><a href="../sorts/bubblesort.html">BUBBLE SORT</a></li>
+	<li class="full-text"><a href="../sorts/selectionsort.html">SELECTTION SORT</a></li>
+	<li class="short-text"><a href="../sorts/selectionsort.html">SEL</a></li>
+        <li><a href="../sorts/insertionsort.html" id="selected">INSERTION SORT</a></li>
+	<li class="full-text"><a href="../sorts/mergesort.html">MERGE SORT</a></li>
+        <li class="short-text"><a href="../sorts/mergesort.html">MER</a></li>
+        <li class="full-text"><a href="../sorts/quicksort.html">QUICK SORT</a></li>
+        <li class="short-text"><a href="../sorts/quicksort.html">QUI</a></li>
+        <li class="full-text"><a href="../sorts/heapsort.html">HEAP SORT</a></li>
+        <li class="short-text"><a href="../sorts/heapsort.html">HEAP</a></li>
+      </div>
+    </ul>
+  </nav>
+    <div>
+        <div id="box">
+            <div class="title" data-aos="fade-down">
+                Insertion Sort
+            </div>
+            <div id="change-container" style="float: right; white-space: nowrap;">
+                
+<button class="change-btn" id="shuffle"><i class="material-icons">shuffle</i></button>
+                <button class="change-btn" id="play"><i class="material-icons" id="mp">play_arrow</i></button>
+                <div id="sliders">
+                    <div id="elements-text">
+Elements: <span id="size-slider-span">25</span><br>
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" id="size-slider" class="slider" oninput="sizeChange()" autocomplete="off">
+                    </div>
+<div id="speed-text">
+Speed: <span id="speed-slider-span">10</span><br>
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" id="speed-slider" class="slider" oninput="speedChange()"autocomplete="off">
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both;">
+                <div id="sort-container">
+                    <div id="sort"></div>
+                    <!-- <div class="step-by-step-holder">
+                        <p>Since swap is true, swap 13 and 20</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sort-cover">
+        <div class="info-parent">
+            <div class="sort-description">
+                <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">DESCRIPTION</div>
+
+                <p>
+                    Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time.
+                    It's less performant than advanced sorting algorithms, but it can still have some advantages: it's
+                    really easy to implement and it's efficient on small data structures almost sorted.
+                </p>
+                <p>
+                    The algorithm divides the data structure in two sublists: a sorted one, and one still to sort.
+                    Initially, the sorted sublist is made up of just one element and it gets progressively filled.
+                    For every iteration, the algorithm picks an element on the unsorted sublist and inserts it at the
+                    right place in the sorted sublist.
+                    It's available in several variants such as <a href="https://www.geeksforgeeks.org/gnome-sort-a-stupid-one/" target="_blank">Gnome Sort</a>.
+                </p>
+
+            </div>
+            <div class="table-box">
+                <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">COMPLEXITY</div>
+                <table class="sort-table" data-aos="flip-left">
+                    <tr>
+                        <th>
+                            Average Complexity
+                        </th>
+                        <td>
+                            O(n<sup>2</sup>)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Best Case
+                        </th>
+                        <td>
+                            O(n)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Worst Case
+                        </th>
+                        <td>
+                            O(n<sup>2</sup>)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Space Complexity
+                        </th>
+                        <td>
+                            O(1)
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="menu-box">
+            <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">IMPLEMENTATIONS</div>
+            <div id="menu-code" data-aos="fade-right">
+                <div class="menu-btns" id="menu-btns">
+                    <button><img src="../images/c_icon.png" width="32" height="32" title="C" alt="C"></button>
+                    <button><img src="../images/cpp_icon.png" width="32" height="32" title="C++" alt="C++"></button>
+                    <button><img src="../images/java_icon.png" width="32" height="32" title="Java" alt="Java"></button>
+                    <button><img src="../images/javascript_icon.png" width="32" height="32" title="JavaScript"
+                            alt="JavaScript"></button>
+                    <button><img src="../images/python_icon.png" width="32" height="32" title="Python"
+                            alt="Python"></button>
+                </div>
+                <div id="code-content">
+                    <pre>
+                        <code id="code"></code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+	<div class="footer-social">
+            <a href="https://www.linkedin.com/in/rishi-dhama-11b5071a0"><i class="bx bxl-linkedin bx-md"></i></a>
+            <a href="https://github.com/rishidhama/"><i class="bx bxl-github bx-md circle"></i></a>
+            <a href="mailto:rishidhama00@gmail.com"><i class="bx bxl-gmail bx-md"></i></a>
+        </div>
+	<div class="copyright">
+        	&copy;Rishi Dhama
+    	</div>
+    </footer>
+    <script>var algo_selected = "Insertion Sort";</script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="../js/base.js"></script>
+    <script type="text/javascript" src="../js/sorts_implementations/insertionsort.js"></script>
+    <script type="text/javascript" src="../js/base_sort.js" defer></script>    
+    <script type="text/javascript" src="../js/visualization/algorithms/insertionsort.js"></script>
+    <script type="text/javascript" src="../js/visualization/script.js"></script>
+</body>
+
+</html>
