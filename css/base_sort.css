@@ -126,6 +126,7 @@ body {
 #change-container {
     max-width: 500px;
     margin: 1em auto;
+    margin-right: 25px;
 }
 
 .slider-container {
