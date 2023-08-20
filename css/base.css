@@ -148,27 +148,30 @@ input[type=checkbox]:checked~.menu .short-text{
     display: block;
     margin-top: 10px;
   }
-.footer{
-height:10vh;
+.footer {
+    height: 20vh;
+    background: rgb(22, 22, 22);
+    padding-top: 20px;
 }
 .footer-social{
-	    text-align: center;
+    text-align: center;
     margin-top: 30px;
 }
 
 .footer-social i{
-background:white;
-color: black;
-border-radius:10px;
-padding: 5px;
-margin:right:5px;
+	background:white;
+	color: black;
+	border-radius:10px;
+	padding: 5px;
+	margin:right:5px;
 	margin-left:5px;
 }
 
-.copyright{
-	text-align: center;
-	margin-top: 2vh;
-	font-weight:500;
+.copyright {
+    text-align: center;
+    margin-top: 5vh;
+    font-weight: 700;
+    background: rgb(22, 22, 22);
 }
 
 }
