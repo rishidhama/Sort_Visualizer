@@ -133,7 +133,8 @@ body {
 }
 
 #sliders {
-    float: right;
+    display: flex;
+    flex-direction: column;
 }
 
 .slider-container {
