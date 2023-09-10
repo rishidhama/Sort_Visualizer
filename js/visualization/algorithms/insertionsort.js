@@ -1,4 +1,5 @@
-async function insertionSort() {if(!running)return;
+async function insertionSort() {
+    if (!running) return;
     var i, j, key;
     await sleep(delay);
 
@@ -7,7 +8,8 @@ async function insertionSort() {if(!running)return;
 
     setColor(0, SORTED);
 
-    for(i = 1; i < size; i++) {if(!running){return;}
+    for (i = 1; i < size; i++) {
+        if (!running) { return; }
         await sleep(delay);
 
         setColor(i, SELECTED);
@@ -16,8 +18,8 @@ async function insertionSort() {if(!running)return;
         j = i - 1;
         key = arr[i];
 
-        while(j >= 0 && arr[j] > key) {
-if(!running)return;
+        while (j >= 0 && arr[j] > key) {
+            if (!running) return;
             setColor(j, COMPARE);
             await sleep(delay);
 
