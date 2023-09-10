@@ -1,4 +1,5 @@
-async function merge(p, q, r) {if(!running)return;
+async function merge(p, q, r) {
+    if (!running) return;
     await sleep(delay);
 
     var i, j;
@@ -7,11 +8,11 @@ async function merge(p, q, r) {if(!running)return;
     var L = [];
     var R = [];
 
-    for(i = 0; i < n1; i++) {
+    for (i = 0; i < n1; i++) {
         L.push(arr[p + i]);
         setColor(p + i, LEFT);
     }
-    for(j = 0; j < n2; j++) {
+    for (j = 0; j < n2; j++) {
         R.push(arr[q + j + 1]);
         setColor(q + j + 1, RIGHT);
     }
@@ -22,10 +23,11 @@ async function merge(p, q, r) {if(!running)return;
     i = 0;
     j = 0;
 
-    for(var k = p; k <= r; k++) {if(!running){return;}
+    for (var k = p; k <= r; k++) {
+        if (!running) { return; }
         await sleep(delay);
 
-        if(L[i] <= R[j]) {
+        if (L[i] <= R[j]) {
             arr[k] = L[i];
             i++;
         }
@@ -40,15 +42,15 @@ async function merge(p, q, r) {if(!running)return;
 
     await sleep(delay);
 
-    if(p == 0 && r == size - 1)
+    if (p == 0 && r == size - 1)
         setColorRange(p, r, SORTED);
     else
         setColorRange(p, r, UNSORTED);
 }
 
 async function mergeSort(p, r) {
-    if(p < r) {
-        var q = Math.floor( (p + r) / 2 );
+    if (p < r) {
+        var q = Math.floor((p + r) / 2);
         await mergeSort(p, q);
         await mergeSort(q + 1, r);
         await merge(p, q, r);
