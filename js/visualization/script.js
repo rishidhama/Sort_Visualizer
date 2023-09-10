@@ -31,17 +31,17 @@ var margin_element;
 
 
 
-function sizeChange(){
-    DEFAULT_SIZE=document.getElementById("size-slider");
-    let elementText=document.getElementById("size-slider-span");
-    elementText.innerHTML=DEFAULT_SIZE.value;
+function sizeChange() {
+    DEFAULT_SIZE = document.getElementById("size-slider");
+    let elementText = document.getElementById("size-slider-span");
+    elementText.innerHTML = DEFAULT_SIZE.value;
     updateValues();
 }
 
-function speedChange(){
-    DEFAULT_SIZE=document.getElementById("speed-slider");
-    let elementText=document.getElementById("speed-slider-span");
-    elementText.innerHTML=DEFAULT_SIZE.value;
+function speedChange() {
+    DEFAULT_SIZE = document.getElementById("speed-slider");
+    let elementText = document.getElementById("speed-slider-span");
+    elementText.innerHTML = DEFAULT_SIZE.value;
     updateValues();
 }
 
@@ -82,15 +82,15 @@ function createArray() {
     }
 }
 
-function stop(){
-		document.getElementById("mp").innerHTML="play_arrow";
-running=false;
-$("#play").prop('disabled', true);
+function stop() {
+    document.getElementById("mp").innerHTML = "play_arrow";
+    running = false;
+    $("#play").prop('disabled', true);
 }
 
-function play(){
-		document.getElementById("mp").innerHTML="stop";
-		running=true;
+function play() {
+    document.getElementById("mp").innerHTML = "stop";
+    running = true;
 }
 
 function setHeight(id, height) {
@@ -141,11 +141,11 @@ $(document).ready(function () {
     $("#speed-slider").attr('max', MAX_SPEED);
     $("#speed-slider").attr('value', DEFAULT_SPEED);
 
-let elementText=document.getElementById("speed-slider-span");
-    elementText.innerHTML=DEFAULT_SPEED;
+    let elementText = document.getElementById("speed-slider-span");
+    elementText.innerHTML = DEFAULT_SPEED;
 
     size = DEFAULT_SIZE;
-    delay = WAITING_TIME * Math.pow(2, MAX_SPEED - DEFAULT_SPEED-5);
+    delay = WAITING_TIME * Math.pow(2, MAX_SPEED - DEFAULT_SPEED - 5);
 
     updateValues();
 
@@ -155,20 +155,20 @@ let elementText=document.getElementById("speed-slider-span");
     $("#shuffle").click(
         function () {
             createArray();
-	    $("#play").prop('disabled', false);
+            $("#play").prop('disabled', false);
         }
     );
     $("#play").click(
         async function () {
-	if(document.getElementById("mp").innerHTML=="play_arrow")
-	    play();
-	else
-	   stop(); 
-disableOthers();
+            if (document.getElementById("mp").innerHTML == "play_arrow")
+                play();
+            else
+                stop();
+            disableOthers();
             setColorRange(0, size - 1, UNSORTED);
 
             if (algo_selected == "Bubble Sort")
-		await bubbleSort();
+                await bubbleSort();
             else if (algo_selected == "Selection Sort")
                 await selectionSort();
             else if (algo_selected == "Insertion Sort")
@@ -179,9 +179,9 @@ disableOthers();
                 await quicksort(0, size - 1);
             else if (algo_selected == "Heap Sort")
                 await heapsort();
-	   else;
-setColorRange(0, size - 1, UNSORTED);
-	    stop();
+            else;
+            setColorRange(0, size - 1, UNSORTED);
+            stop();
             enableOthers();
         }
     );
@@ -194,7 +194,7 @@ setColorRange(0, size - 1, UNSORTED);
     });
 
     $("#speed-slider").on('input', function () {
-        delay = WAITING_TIME * Math.pow(2, MAX_SPEED - $(this).val()-5);
+        delay = WAITING_TIME * Math.pow(2, MAX_SPEED - $(this).val() - 5);
     });
 
     $(window).resize(function () {
