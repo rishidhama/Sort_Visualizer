@@ -4,11 +4,11 @@ async function partition(p, r) {
     var i = p - 1;
     setColor(r, SELECTED);
 
-    for(var j = p; j < r; j++) {
-if(!running){return;}
+    for (var j = p; j < r; j++) {
+        if (!running) { return; }
         await sleep(delay);
 
-        if(arr[j] <= arr[r]) {
+        if (arr[j] <= arr[r]) {
             i++;
             swap(i, j);
             setColor(j, RIGHT);
@@ -18,7 +18,7 @@ if(!running){return;}
             setColor(j, RIGHT);
     }
 
-    if(i + 1 < r) {
+    if (i + 1 < r) {
         await sleep(delay);
 
         swap(i + 1, r);
@@ -34,18 +34,18 @@ if(!running){return;}
 }
 
 async function quicksort(p, r) {
-    if(p < r) {
+    if (p < r) {
         var q = await partition(p, r);
 
         await quicksort(p, q - 1);
-if(!running){return;}
+        if (!running) { return; }
         setColorRange(p, q, SORTED);
 
         await quicksort(q + 1, r);
-if(!running){return;}
+        if (!running) { return; }
         setColorRange(q + 1, r, SORTED);
     }
 
-    if(p == 0 && r == size - 1)
+    if (p == 0 && r == size - 1)
         await sleep(delay);
 }
