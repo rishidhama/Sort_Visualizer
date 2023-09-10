@@ -62,6 +62,7 @@ body {
     .change-btn i {
         font-size: 55px !important;
     }
+
     .change-btn:enabled i:hover {
         font-size: 65px !important;
     }
@@ -81,7 +82,7 @@ body {
     }
 }
 
-#play{
+#play {
     margin-right: 15px;
 }
 
@@ -276,18 +277,19 @@ body {
 }
 
 @media only screen and (max-width: 1100px) {
-     #change-container{
-	margin-top: 20px;
-	margin-right: 5px;
-     }
+    #change-container {
+        margin-top: 20px;
+        margin-right: 5px;
+    }
+
     .sort-table {
         font-size: 19px;
-	    margin-top: 10px;
+        margin-top: 10px;
     }
 
     .table-box {
         float: left;
-	margin-top: 8%;
+        margin-top: 8%;
     }
 }
 
@@ -386,8 +388,8 @@ td {
 
 @media only screen and (max-width: 1100px) {
     .menu-btns button:last-child {
-    	border-top-right-radius: 10px;
-        border-right:none;
+        border-top-right-radius: 10px;
+        border-right: none;
     }
 }
 
